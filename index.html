@@ -29,14 +29,15 @@
     <!-- Swiper CSS (CDN) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 
-    <!-- CSS -->
+   
+       <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css">
-        <style>
+    <style>
         .portfolio__grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -67,7 +68,118 @@
             object-fit: cover;
             display: block;
         }
+
+        /* СЕКЦИЯ ФАКТЫ */
+        .facts {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .facts__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .facts__card {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            border-top: 4px solid #2080CD;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .facts__icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .facts__title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 8px 0 12px;
+        }
+
+        .facts__text {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.6;
+        }
+
+        /* СЕКЦИЯ ПОЧЕМУ ВЫБИРАЮТ НАС */
+        .why-us {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .why-us__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .why-us__card {
+            background: #f9f9f9;
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .why-us__card:hover {
+            box-shadow: 0 8px 24px rgba(32, 128, 205, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .why-us__icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .why-us__title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 8px 0 10px;
+        }
+
+        .why-us__text {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.6;
+        }
+
+        .why-us__stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+            padding: 32px 40px;
+            background: linear-gradient(135deg, #1E7BA6 0%, #2080CD 100%);
+            border-radius: 16px;
+            color: #ffffff;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat__number {
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat__label {
+            font-size: 13px;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
     </style>
+
 
 
     <!-- Google Fonts -->
@@ -230,6 +342,219 @@
             </div>
         </div>
     </section>
+    <!-- СЕКЦИЯ ФАКТЫ -->
+    <section class="facts" id="facts">
+        <div class="container">
+            <h2 class="section__title">Факты, которые говорят сами за себя</h2>
+            
+            <div class="facts__grid">
+                <div class="facts__card">
+                    <div class="facts__icon">📋</div>
+                    <h3 class="facts__title">Договор с полным описанием работ</h3>
+                    <p class="facts__text">Юридическая защита для обеих сторон. Вы знаете точно, что получите.</p>
+                </div>
+                <div class="facts__card">
+                    <div class="facts__icon">💳</div>
+                    <h3 class="facts__title">Поэтапные платежи</h3>
+                    <p class="facts__text">Вы платите по мере выполнения работ, не авансом. Безопасно для вас.</p>
+                </div>
+                <div class="facts__card">
+                    <div class="facts__icon">🧮</div>
+                    <h3 class="facts__title">Смета рассчитывается бесплатно</h3>
+                    <p class="facts__text">Нет обязательств. Без давления. Просто консультация и расчет.</p>
+                </div>
+                <div class="facts__card">
+                    <div class="facts__icon">👁️</div>
+                    <h3 class="facts__title">Авторский надзор</h3>
+                    <p class="facts__text">Наш специалист следит за качеством до конца проекта. Ничего не будет упущено.</p>
+                </div>
+                <div class="facts__card">
+                    <div class="facts__icon">🔧</div>
+                    <h3 class="facts__title">Гарантийное обслуживание</h3>
+                    <p class="facts__text">Если что-то сломалось в течение 2 лет — мы отремонтируем бесплатно.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ ПОЧЕМУ ВЫБИРАЮТ НАС -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <h2 class="section__title">Почему выбирают нас?</h2>
+            <p class="section__subtitle">Убедительные доводы для сотрудничества</p>
+
+            <div class="why-us__grid">
+                <div class="why-us__card">
+                    <div class="why-us__icon">💰</div>
+                    <h3 class="why-us__title">Прозрачное ценообразование</h3>
+                    <p class="why-us__text">Точная смета ДО начала работ. Нет нежиданных расходов и доплат. Всё честно.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__icon">📋</div>
+                    <h3 class="why-us__title">Опытная команда</h3>
+                    <p class="why-us__text">10+ лет на рынке. Не старт. За нами — сотни успешных проектов.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__icon">✓</div>
+                    <h3 class="why-us__title">Лицензии и сертификаты</h3>
+                    <p class="why-us__text">Каждый сотрудник прошел обучение и имеет документы. Качество гарантировано.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__icon">🎯</div>
+                    <h3 class="why-us__title">Гибкость по бюджету</h3>
+                    <p class="why-us__text">От эконома до премиума. Нет минимальной сметы. Работаем с любым бюджетом.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__icon">🛡️</div>
+                    <h3 class="why-us__title">Гарантия 2 года</h3>
+                    <p class="why-us__text">Если возникнет проблема — мы бесплатно исправим. Спокойствие гарантировано.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__icon">👁️</div>
+                    <h3 class="why-us__title">Контроль качества</h3>
+                    <p class="why-us__text">Ежедневные проверки, фотоотчеты, согласование с клиентом на каждом этапе.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__icon">💬</div>
+                    <h3 class="why-us__title">Быстрая поддержка</h3>
+                    <p class="why-us__text">Ответим в Telegram за 5 минут. Менеджер всегда на связи и готов помочь.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__icon">♻️</div>
+                    <h3 class="why-us__title">Экологичные материалы</h3>
+                    <p class="why-us__text">Только сертифицированные материалы с документами качества. Ваше здоровье в приоритете.</p>
+                </div>
+            </div>
+
+            <div class="why-us__stats">
+                <div class="stat">
+                    <div class="stat__number">100+</div>
+                    <div class="stat__label">Проектов успешно завершено</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number">98%</div>
+                    <div class="stat__label">Клиентов рекомендуют нас</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number">4.9★</div>
+                    <div class="stat__label">Средняя оценка (200+ отзывов)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number">10+</div>
+                    <div class="stat__label">Лет на рынке</div>
+                </div>
+            </div>
+        </div>
+    </section>
+        /* СЕКЦИЯ ФАКТЫ */
+        .facts {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .facts__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .facts__card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border-top: 4px solid #2080CD;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .facts__icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .facts__title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 12px 0;
+        }
+
+        .facts__text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* СЕКЦИЯ ПОЧЕМУ ВЫБИРАЮТ НАС */
+        .why-us {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .why-us__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .why-us__card {
+            background: #f9f9f9;
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .why-us__card:hover {
+            box-shadow: 0 8px 24px rgba(32, 128, 205, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .why-us__icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .why-us__title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 12px 0;
+        }
+
+        .why-us__text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .why-us__stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, #1E7BA6 0%, #2080CD 100%);
+            border-radius: 12px;
+        }
+
+        .stat {
+            text-align: center;
+            color: white;
+        }
+
+        .stat__number {
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat__label {
+            font-size: 13px;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
 
     <!-- СЕКЦИЯ ОТЗЫВЫ -->
     <section class="testimonials" id="testimonials">
