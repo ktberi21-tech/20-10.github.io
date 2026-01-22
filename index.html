@@ -864,44 +864,47 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        new Swiper('.testimonials-swiper', {
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.testimonials-swiper', {
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 24,
+        pagination: {
+            el: '.testimonials-swiper .swiper-pagination',
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.testimonials-swiper .swiper-button-next',
+            prevEl: '.testimonials-swiper .swiper-button-prev'
+        },
+        breakpoints: {
+            1024: { slidesPerView: 3 },
+            768: { slidesPerView: 2 },
+            480: { slidesPerView: 1 }
+        }
+    });
+
+    const portfolioSliders = document.querySelectorAll('.portfolio .swiper');
+    portfolioSliders.forEach(function (slider) {
+        new Swiper(slider, {
             loop: true,
-            slidesPerView: 3,
-            spaceBetween: 24,
+            slidesPerView: 1,
+            spaceBetween: 16,
             pagination: {
-                el: '.testimonials-swiper .swiper-pagination',
+                el: slider.querySelector('.swiper-pagination'),
                 clickable: true
             },
             navigation: {
-                nextEl: '.testimonials-swiper .swiper-button-next',
-                prevEl: '.testimonials-swiper .swiper-button-prev'
-            },
-            breakpoints: {
-                1024: { slidesPerView: 3 },
-                768: { slidesPerView: 2 },
-                480: { slidesPerView: 1 }
+                nextEl: slider.querySelector('.swiper-button-next'),
+                prevEl: slider.querySelector('.swiper-button-prev')
             }
         });
-
-        var portfolioSliders = document.querySelectorAll('[class^="portfolio-swiper-"]');
-        portfolioSliders.forEach(function (slider) {
-            new Swiper(slider, {
-                loop: true,
-                slidesPerView: 1,
-                spaceBetween: 16,
-                pagination: {
-                    el: slider.querySelector('.swiper-pagination'),
-                    clickable: true
-                },
-                navigation: {
-                    nextEl: slider.querySelector('.swiper-button-next'),
-                    prevEl: slider.querySelector('.swiper-button-prev')
-                }
-            });
-        });
     });
-    </script>
+});
+</script>
 
 </body>
 </html>
