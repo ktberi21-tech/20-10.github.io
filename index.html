@@ -26,6 +26,9 @@
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/png" href="/images/favicon.png">
     
+    <!-- Swiper CSS (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
@@ -127,8 +130,7 @@
         </div>
     </section>
 
-    <!-- О нас -->
-    <!-- ... блоки about / services / portfolio / team / trust оставляю без изменений ... -->
+    <!-- О нас / услуги / портфолио (как было) -->
 
     <!-- СЕКЦИЯ ОТЗЫВЫ -->
     <section class="testimonials" id="testimonials">
@@ -140,20 +142,13 @@
                 <!-- Отзыв 1 -->
                 <div class="testimonial__card">
                     <div class="testimonial__header">
-                        <div class="testimonial__avatar">
-                            <img src="images/testimonials/client1.jpg" alt="Иван Петров">
-                        </div>
                         <div class="testimonial__info">
                             <h4 class="testimonial__name">Иван Петров</h4>
                             <p class="testimonial__date">Январь 2024</p>
                         </div>
                     </div>
                     <div class="testimonial__rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                     </div>
                     <p class="testimonial__text">
                         "Сделали косметический ремонт в гостиной. Ребята очень аккуратные, всё сделали в срок. 
@@ -165,20 +160,13 @@
                 <!-- Отзыв 2 -->
                 <div class="testimonial__card">
                     <div class="testimonial__header">
-                        <div class="testimonial__avatar">
-                            <img src="images/testimonials/client2.jpg" alt="Елена Соколова">
-                        </div>
                         <div class="testimonial__info">
                             <h4 class="testimonial__name">Елена Соколова</h4>
                             <p class="testimonial__date">Декабрь 2023</p>
                         </div>
                     </div>
                     <div class="testimonial__rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                     </div>
                     <p class="testimonial__text">
                         "Заказала люкс ремонт спальни и рабочего кабинета. Дизайнер помог подобрать материалы, 
@@ -190,20 +178,13 @@
                 <!-- Отзыв 3 -->
                 <div class="testimonial__card">
                     <div class="testimonial__header">
-                        <div class="testimonial__avatar">
-                            <img src="images/testimonials/client3.jpg" alt="Дмитрий Лебедев">
-                        </div>
                         <div class="testimonial__info">
                             <h4 class="testimonial__name">Дмитрий Лебедев</h4>
                             <p class="testimonial__date">Ноябрь 2023</p>
                         </div>
                     </div>
                     <div class="testimonial__rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                     </div>
                     <p class="testimonial__text">
                         "Ремонт нескольких комнат. Ребята работали чисто, без нарушений сроков. 
@@ -215,45 +196,31 @@
                 <!-- Отзыв 4 -->
                 <div class="testimonial__card">
                     <div class="testimonial__header">
-                        <div class="testimonial__avatar">
-                            <img src="images/testimonials/client4.jpg" alt="Анна Волкова">
-                        </div>
                         <div class="testimonial__info">
                             <h4 class="testimonial__name">Анна Волкова</h4>
                             <p class="testimonial__date">Октябрь 2023</p>
                         </div>
                     </div>
                     <div class="testimonial__rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                     </div>
                     <p class="testimonial__text">
                         "Искала бригаду для малогабаритной квартиры. Они предложили оптимальное решение по цене. 
                         Квартира превратилась в уютный дом. Спасибо!"
                     </p>
-                    <p class="testimonial__project">Оптимизированный ремонт, 1-комнатная, м. ВДИХ</p>
+                    <p class="testimonial__project">Оптимизированный ремонт, 1-комнатная, м. ВДНХ</p>
                 </div>
 
                 <!-- Отзыв 5 -->
                 <div class="testimonial__card">
                     <div class="testimonial__header">
-                        <div class="testimonial__avatar">
-                            <img src="images/testimonials/client5.jpg" alt="Сергей Морозов">
-                        </div>
                         <div class="testimonial__info">
                             <h4 class="testimonial__name">Сергей Морозов</h4>
                             <p class="testimonial__date">Сентябрь 2023</p>
                         </div>
                     </div>
                     <div class="testimonial__rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                     </div>
                     <p class="testimonial__text">
                         "Ремонт кухни и ванной комнаты под ключ. Мастер Олег был всегда доступен, быстро решал 
@@ -265,20 +232,13 @@
                 <!-- Отзыв 6 -->
                 <div class="testimonial__card">
                     <div class="testimonial__header">
-                        <div class="testimonial__avatar">
-                            <img src="images/testimonials/client6.jpg" alt="Татьяна Козлова">
-                        </div>
                         <div class="testimonial__info">
                             <h4 class="testimonial__name">Татьяна Козлова</h4>
                             <p class="testimonial__date">Август 2023</p>
                         </div>
                     </div>
                     <div class="testimonial__rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                     </div>
                     <p class="testimonial__text">
                         "Переделывали полностью планировку квартиры. Сложная работа, но команда справилась идеально. 
@@ -290,20 +250,13 @@
                 <!-- Отзыв 7 -->
                 <div class="testimonial__card">
                     <div class="testimonial__header">
-                        <div class="testimonial__avatar">
-                            <img src="images/testimonials/client7.jpg" alt="Михаил Новиков">
-                        </div>
                         <div class="testimonial__info">
                             <h4 class="testimonial__name">Михаил Новиков</h4>
                             <p class="testimonial__date">Июль 2023</p>
                         </div>
                     </div>
                     <div class="testimonial__rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                     </div>
                     <p class="testimonial__text">
                         "Первый раз делал капремонт. Парни всё объяснили, помогли выбрать материалы, 
@@ -315,26 +268,36 @@
                 <!-- Отзыв 8 -->
                 <div class="testimonial__card">
                     <div class="testimonial__header">
-                        <div class="testimonial__avatar">
-                            <img src="images/testimonials/client8.jpg" alt="Ольга Смирнова">
-                        </div>
                         <div class="testimonial__info">
                             <h4 class="testimonial__name">Ольга Смирнова</h4>
                             <p class="testimonial__date">Июнь 2023</p>
                         </div>
                     </div>
                     <div class="testimonial__rating">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                     </div>
                     <p class="testimonial__text">
                         "Ремонт в новостройке с нуля. Ребята вложили в работу душу, каждая деталь продумана. 
                         Гарантия спокойствия на 2 года — бесценно!"
                     </p>
                     <p class="testimonial__project">Ремонт новостройки, 4-комнатная, м. Новослободская</p>
+                </div>
+
+                <!-- Отзыв 9 (дополнительный) -->
+                <div class="testimonial__card">
+                    <div class="testimonial__header">
+                        <div class="testimonial__info">
+                            <h4 class="testimonial__name">Алексей Кузнецов</h4>
+                            <p class="testimonial__date">Май 2023</p>
+                        </div>
+                    </div>
+                    <div class="testimonial__rating">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="testimonial__text">
+                        "Делали ремонт под сдачу. Всё сделали быстро, без лишних затрат, помогли с подбором недорогих, но качественных материалов."
+                    </p>
+                    <p class="testimonial__project">Ремонт под аренду, студия, м. Щукинская</p>
                 </div>
             </div>
         </div>
@@ -374,11 +337,11 @@
                 <!-- Мастер 2 -->
                 <div class="team__card">
                     <div class="team__image">
-                        <img src="images/team/master2.jpg" alt="Антон Иванов">
+                        <img src="images/team/master2.jpg" alt="Андрей Каплин">
                         <div class="team__badge">Прораб</div>
                     </div>
                     <div class="team__content">
-                        <h3 class="team__name">Антон Иванов</h3>
+                        <h3 class="team__name">Андрей Каплин</h3>
                         <p class="team__role">Прораб, стаж 12 лет</p>
                         <p class="team__description">
                             Отвечает за качество монтажных работ, чистоту на объекте и соблюдение сроков.
@@ -446,7 +409,94 @@
         </div>
     </section>
 
-    <!-- CSS для отзывов и команды -->
+    <!-- СЕКЦИЯ ДИЗАЙНЕРСКИЕ РЕШЕНИЯ -->
+    <section class="design" id="design">
+        <div class="container">
+            <h2 class="section__title">Дизайнерские решения</h2>
+            <p class="section__subtitle">Подборка реализованных решений по планировке и отделке</p>
+
+            <div class="swiper design-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/design/design1.jpg" alt="Дизайнерское решение 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/design/design2.jpg" alt="Дизайнерское решение 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/design/design3.jpg" alt="Дизайнерское решение 3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/design/design4.jpg" alt="Дизайнерское решение 4">
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ ВАННАЯ КОМНАТА -->
+    <section class="bathroom" id="bathroom">
+        <div class="container">
+            <h2 class="section__title">Как может выглядеть ванная комната</h2>
+            <p class="section__subtitle">Несколько вариантов отделки, освещения и планировки</p>
+
+            <div class="swiper bathroom-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/bathroom/bathroom1.jpg" alt="Ванная комната вариант 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/bathroom/bathroom2.jpg" alt="Ванная комната вариант 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/bathroom/bathroom3.jpg" alt="Ванная комната вариант 3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/bathroom/bathroom4.jpg" alt="Ванная комната вариант 4">
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ КУХНЯ-ГОСТИНАЯ -->
+    <section class="kitchen-living" id="kitchen-living">
+        <div class="container">
+            <h2 class="section__title">Кухня-гостиная</h2>
+            <p class="section__subtitle">Примеры объединённых пространств кухни и гостиной</p>
+
+            <div class="swiper kitchen-living-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/kitchen-living/kitchen1.jpg" alt="Кухня-гостиная вариант 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/kitchen-living/kitchen2.jpg" alt="Кухня-гостиная вариант 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/kitchen-living/kitchen3.jpg" alt="Кухня-гостиная вариант 3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/kitchen-living/kitchen4.jpg" alt="Кухня-гостиная вариант 4">
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSS для отзывов, команды и слайдеров -->
     <style>
     /* ===== TESTIMONIALS SECTION ===== */
     .testimonials {
@@ -482,20 +532,6 @@
         align-items: center;
         gap: 16px;
         margin-bottom: 16px;
-    }
-
-    .testimonial__avatar {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        overflow: hidden;
-        flex-shrink: 0;
-    }
-
-    .testimonial__avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 
     .testimonial__info {
@@ -671,10 +707,36 @@
         color: var(--color-btn-primary-text);
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* ===== SLIDERS (DESIGN / BATHROOM / KITCHEN-LIVING) ===== */
+    .design,
+    .bathroom,
+    .kitchen-living {
+        padding: 80px 0;
+        background: var(--color-background);
+    }
+
+    .design .swiper,
+    .bathroom .swiper,
+    .kitchen-living .swiper {
+        margin-top: 32px;
+        width: 100%;
+    }
+
+    .design .swiper-slide img,
+    .bathroom .swiper-slide img,
+    .kitchen-living .swiper-slide img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+    }
+
     @media (max-width: 768px) {
         .testimonials,
-        .team {
+        .team,
+        .design,
+        .bathroom,
+        .kitchen-living {
             padding: 60px 0;
         }
 
@@ -695,21 +757,25 @@
         .section__subtitle {
             font-size: var(--font-size-base);
         }
+
+        .design .swiper-slide img,
+        .bathroom .swiper-slide img,
+        .kitchen-living .swiper-slide img {
+            height: 260px;
+        }
     }
 
     @media (max-width: 480px) {
         .testimonials,
-        .team {
+        .team,
+        .design,
+        .bathroom,
+        .kitchen-living {
             padding: 40px 0;
         }
 
         .testimonial__header {
             gap: 12px;
-        }
-
-        .testimonial__avatar {
-            width: 48px;
-            height: 48px;
         }
 
         .testimonial__text {
@@ -842,6 +908,32 @@
         </div>
     </div>
     
+    <!-- Swiper JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        // Инициализация всех слайдеров на странице
+        document.addEventListener('DOMContentLoaded', function () {
+            var sliders = document.querySelectorAll('.swiper');
+
+            sliders.forEach(function (slider) {
+                new Swiper(slider, {
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    pagination: {
+                        el: slider.querySelector('.swiper-pagination'),
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: slider.querySelector('.swiper-button-next'),
+                        prevEl: slider.querySelector('.swiper-button-prev'),
+                    },
+                });
+            });
+        });
+    </script>
+
     <!-- Scripts -->
     <script src="gallery.js"></script>
     <script src="js/main.js"></script>
