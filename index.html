@@ -29,15 +29,232 @@
     <!-- Swiper CSS (CDN) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="animations.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ремонт квартир под ключ",
+      "description": "Профессиональные услуги по ремонту и отделке квартир",
+      "url": "https://yoursite.ru",
+      "telephone": "+7 977 752 90 50",
+      "email": "info@yoursite.ru",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Москва",
+        "streetAddress": "Пресненская набережная 8стр1",
+        "addressCountry": "RU"
+      },
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "150"
+      }
+    }
+    </script>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* НАВИГАЦИЯ */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            padding: 16px 0;
+        }
+
+        .navbar__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar__logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a3a3f;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+        }
+
+        .navbar__menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .navbar__link {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar__link:hover {
+            color: #2080CD;
+        }
+
+        .navbar__cta {
+            margin-left: auto;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: #333;
+            transition: all 0.3s;
+        }
+
+        /* КНОПКИ */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn--primary {
+            background: #2080CD;
+            color: white;
+        }
+
+        .btn--primary:hover {
+            background: #1a5a9f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(32, 128, 205, 0.3);
+        }
+
+        .btn--outline {
+            background: transparent;
+            color: #2080CD;
+            border: 2px solid #2080CD;
+        }
+
+        .btn--outline:hover {
+            background: #f0f7ff;
+        }
+
+        .btn--lg {
+            padding: 14px 32px;
+            font-size: 15px;
+        }
+
+        /* ГЕРОЙ */
+        .hero {
+            padding: 80px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+        }
+
+        .hero__content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .hero__title {
+            font-size: 44px;
+            font-weight: 700;
+            color: #1a3a3f;
+            line-height: 1.2;
+        }
+
+        .hero__subtitle {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .hero__buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero__image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* СЕКЦИЯ ПРИМЕРЫ РАБОТ */
+        .portfolio {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .section__title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            color: #1a3a3f;
+            margin-bottom: 12px;
+        }
+
+        .section__subtitle {
+            font-size: 16px;
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
         .portfolio__grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -45,12 +262,34 @@
             margin-top: 40px;
         }
 
+        .portfolio__item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .portfolio__item:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .portfolio__title {
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a3a3f;
+            text-align: center;
+            background: #f9f9f9;
+        }
+
         .portfolio-swiper-1,
         .portfolio-swiper-2,
         .portfolio-swiper-3 {
             width: 100%;
             height: 280px;
-            border-radius: 12px;
+            border-radius: 0;
             overflow: hidden;
         }
 
@@ -87,7 +326,13 @@
             padding: 24px;
             border-radius: 16px;
             border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s;
+        }
+
+        .facts__card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .facts__icon {
@@ -99,6 +344,7 @@
             font-size: 18px;
             font-weight: 600;
             margin: 4px 0 8px;
+            color: #1a3a3f;
         }
 
         .facts__text {
@@ -125,7 +371,7 @@
             padding: 28px;
             border-radius: 16px;
             border: 1px solid #e5e5e5;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             transition: all 0.25s ease;
             text-align: center;
         }
@@ -144,6 +390,7 @@
             font-size: 18px;
             font-weight: 600;
             margin: 6px 0 10px;
+            color: #1a3a3f;
         }
 
         .why-us__text {
@@ -178,45 +425,296 @@
             margin-top: 8px;
             opacity: 0.9;
         }
+
+        /* СЕКЦИЯ ОТЗЫВЫ */
+        .testimonials {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .testimonials-swiper {
+            margin-top: 40px;
+        }
+
+        .testimonial__card {
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .testimonial__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial__info {
+            flex: 1;
+        }
+
+        .testimonial__name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a3a3f;
+            margin: 0;
+        }
+
+        .testimonial__date {
+            font-size: 12px;
+            color: #999;
+            margin: 4px 0 0;
+        }
+
+        .testimonial__rating {
+            display: flex;
+            gap: 4px;
+        }
+
+        .star {
+            color: #ffc107;
+            font-size: 16px;
+        }
+
+        .testimonial__text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            flex: 1;
+            font-style: italic;
+        }
+
+        .testimonial__project {
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #e5e5e5;
+            padding-top: 12px;
+        }
+
+        /* СЕКЦИЯ КОНТАКТЫ */
+        .contacts-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1E7BA6 0%, #2080CD 100%);
+            color: #ffffff;
+        }
+
+        .contacts-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contacts-header h2 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .contacts-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-value {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .contact-link {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Buttons группа */
+        .button-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn--white {
+            background: #ffffff;
+            color: #2080CD;
+        }
+
+        .btn--white:hover {
+            background: #f0f0f0;
+        }
+
+        /* Swiper кастомизация */
+        .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #2080CD;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #2080CD;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 32px 0;
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            font-size: 13px;
+            border-top: 1px solid #333;
+        }
+
+        .footer a {
+            color: #2080CD;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* АДАПТИВ */
+        @media (max-width: 1024px) {
+            .portfolio__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 60px 0;
+            }
+
+            .hero__title {
+                font-size: 32px;
+            }
+
+            .navbar__menu {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 12px 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .navbar__menu {
+                display: none;
+            }
+
+            .navbar__cta {
+                display: none;
+            }
+
+            .hero__title {
+                font-size: 28px;
+            }
+
+            .hero__buttons {
+                flex-direction: column;
+            }
+
+            .hero__buttons .btn {
+                width: 100%;
+            }
+
+            .section__title {
+                font-size: 28px;
+            }
+
+            .contacts-content {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button-group .btn {
+                width: 100%;
+            }
+
+            .why-us__stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero__title {
+                font-size: 24px;
+            }
+
+            .section__title {
+                font-size: 24px;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                font-size: 13px;
+            }
+
+            .testimonial__card {
+                padding: 20px;
+            }
+
+            .why-us__stats {
+                grid-template-columns: 1fr;
+                padding: 24px;
+            }
+        }
     </style>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Ремонт квартир под ключ",
-      "description": "Профессиональные услуги по ремонту и отделке квартир",
-      "url": "https://yoursite.ru",
-      "telephone": "+7 977 752 90 50",
-      "email": "info@yoursite.ru",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Москва",
-        "streetAddress": "Пресненская набережная 8стр1",
-        "addressCountry": "RU"
-      },
-      "priceRange": "$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "150"
-      }
-    }
-    </script>
 </head>
 <body>
-    <!-- Навигация -->
+    <!-- НАВИГАЦИЯ -->
     <header class="header" id="header">
         <nav class="navbar">
             <div class="container navbar__content">
                 <div class="navbar__logo">
-                    <img src="images/logo.svg" alt="Logo" class="logo">
                     <span class="company-name">Ремонт 24/7</span>
                 </div>
 
@@ -228,30 +726,28 @@
 
                 <ul class="navbar__menu" id="navbarMenu">
                     <li><a href="#about" class="navbar__link">О нас</a></li>
-                    <li><a href="#services" class="navbar__link">Услуги</a></li>
                     <li><a href="#portfolio" class="navbar__link">Примеры работ</a></li>
                     <li><a href="#testimonials" class="navbar__link">Отзывы</a></li>
-                    <li><a href="#team" class="navbar__link">Команда</a></li>
                     <li><a href="#contacts" class="navbar__link">Контакты</a></li>
                 </ul>
 
                 <a class="btn btn--primary navbar__cta" id="headerCTA" href="https://t.me/mpood01" target="_blank" rel="noopener">
-                    Написать в Telegram
+                    Telegram
                 </a>
             </div>
         </nav>
     </header>
 
-    <!-- Героя секция -->
+    <!-- ГЕРОЙ СЕКЦИЯ -->
     <section class="hero" id="hero">
         <div class="hero__content">
             <h1 class="hero__title">Ремонт квартир под ключ с гарантией качества</h1>
             <p class="hero__subtitle">От бюджетного ремонта до люкс-отделки. Мы адаптируем работы под ваш бюджет и сроки</p>
             <div class="hero__buttons">
                 <a class="btn btn--primary btn--lg" id="heroCTA" href="https://t.me/mpood01" target="_blank" rel="noopener">
-                    Обсудить проект в Telegram
+                    💬 Обсудить проект в Telegram
                 </a>
-                <a href="#portfolio" class="btn btn--outline btn--lg">Посмотреть примеры работ</a>
+                <a href="#portfolio" class="btn btn--outline btn--lg">Посмотреть примеры</a>
             </div>
         </div>
         <div class="hero__image">
@@ -348,7 +844,7 @@
             <div class="facts__grid">
                 <div class="facts__card">
                     <div class="facts__icon">📋</div>
-                    <h3 class="facts__title">Договор с полным описанием работ</h3>
+                    <h3 class="facts__title">Договор с полным описанием</h3>
                     <p class="facts__text">Юридическая защита для обеих сторон. Вы знаете точно, что получите.</p>
                 </div>
                 <div class="facts__card">
@@ -364,7 +860,7 @@
                 <div class="facts__card">
                     <div class="facts__icon">👁️</div>
                     <h3 class="facts__title">Авторский надзор</h3>
-                    <p class="facts__text">Наш специалист следит за качеством до конца проекта. Ничего не будет упущено.</p>
+                    <p class="facts__text">Наш специалист следит за качеством до конца проекта.</p>
                 </div>
                 <div class="facts__card">
                     <div class="facts__icon">🔧</div>
@@ -385,57 +881,57 @@
                 <div class="why-us__card">
                     <div class="why-us__icon">💰</div>
                     <h3 class="why-us__title">Прозрачное ценообразование</h3>
-                    <p class="why-us__text">Точная смета ДО начала работ. Нет нежиданных расходов и доплат. Всё честно.</p>
+                    <p class="why-us__text">Точная смета ДО начала работ. Нет неожиданных расходов.</p>
                 </div>
                 <div class="why-us__card">
                     <div class="why-us__icon">📋</div>
                     <h3 class="why-us__title">Опытная команда</h3>
-                    <p class="why-us__text">10+ лет на рынке. Не старт. За нами — сотни успешных проектов.</p>
+                    <p class="why-us__text">10+ лет на рынке. За нами сотни успешных проектов.</p>
                 </div>
                 <div class="why-us__card">
                     <div class="why-us__icon">✓</div>
                     <h3 class="why-us__title">Лицензии и сертификаты</h3>
-                    <p class="why-us__text">Каждый сотрудник прошел обучение и имеет документы. Качество гарантировано.</p>
+                    <p class="why-us__text">Каждый сотрудник прошел обучение. Качество гарантировано.</p>
                 </div>
                 <div class="why-us__card">
                     <div class="why-us__icon">🎯</div>
                     <h3 class="why-us__title">Гибкость по бюджету</h3>
-                    <p class="why-us__text">От эконома до премиума. Нет минимальной сметы. Работаем с любым бюджетом.</p>
+                    <p class="why-us__text">От эконома до премиума. Работаем с любым бюджетом.</p>
                 </div>
                 <div class="why-us__card">
                     <div class="why-us__icon">🛡️</div>
                     <h3 class="why-us__title">Гарантия 2 года</h3>
-                    <p class="why-us__text">Если возникнет проблема — мы бесплатно исправим. Спокойствие гарантировано.</p>
+                    <p class="why-us__text">Если возникнет проблема — мы исправим бесплатно.</p>
                 </div>
                 <div class="why-us__card">
                     <div class="why-us__icon">👁️</div>
                     <h3 class="why-us__title">Контроль качества</h3>
-                    <p class="why-us__text">Ежедневные проверки, фотоотчеты, согласование с клиентом на каждом этапе.</p>
+                    <p class="why-us__text">Ежедневные проверки, фотоотчеты, согласование на каждом этапе.</p>
                 </div>
                 <div class="why-us__card">
                     <div class="why-us__icon">💬</div>
                     <h3 class="why-us__title">Быстрая поддержка</h3>
-                    <p class="why-us__text">Ответим в Telegram за 5 минут. Менеджер всегда на связи и готов помочь.</p>
+                    <p class="why-us__text">Ответим в Telegram за 5 минут. Менеджер всегда на связи.</p>
                 </div>
                 <div class="why-us__card">
                     <div class="why-us__icon">♻️</div>
                     <h3 class="why-us__title">Экологичные материалы</h3>
-                    <p class="why-us__text">Только сертифицированные материалы с документами качества. Ваше здоровье в приоритете.</p>
+                    <p class="why-us__text">Только сертифицированные материалы. Ваше здоровье в приоритете.</p>
                 </div>
             </div>
 
             <div class="why-us__stats">
                 <div class="stat">
                     <div class="stat__number">100+</div>
-                    <div class="stat__label">Проектов успешно завершено</div>
+                    <div class="stat__label">Проектов завершено</div>
                 </div>
                 <div class="stat">
                     <div class="stat__number">98%</div>
-                    <div class="stat__label">Клиентов рекомендуют нас</div>
+                    <div class="stat__label">Клиентов рекомендуют</div>
                 </div>
                 <div class="stat">
                     <div class="stat__number">4.9★</div>
-                    <div class="stat__label">Средняя оценка (200+ отзывов)</div>
+                    <div class="stat__label">Средняя оценка</div>
                 </div>
                 <div class="stat">
                     <div class="stat__number">10+</div>
@@ -485,7 +981,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Заказала люкс ремонт спальни и рабочего кабинета. Дизайнер помог подобрать материалы, работа идеальна. Результат превзошёл ожидания!"
+                                "Заказала люкс ремонт спальни. Дизайнер помог подобрать материалы, работа идеальна. Результат превзошёл ожидания!"
                             </p>
                             <p class="testimonial__project">Люкс ремонт, 3-комнатная, м. Арбатская</p>
                         </div>
@@ -504,7 +1000,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Ремонт нескольких комнат. Ребята работали чисто, без нарушений сроков. Профессиональный подход. Буду обращаться ещё!"
+                                "Ремонт нескольких комнат. Ребята работали чисто, без нарушений сроков. Профессиональный подход!"
                             </p>
                             <p class="testimonial__project">Полный ремонт, 4-комнатная, м. Кутузовская</p>
                         </div>
@@ -523,7 +1019,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Искала бригаду для малогабаритной квартиры. Предложили оптимальное решение по цене. Квартира стала уютным домом. Спасибо!"
+                                "Искала бригаду для малогабаритной квартиры. Предложили оптимальное решение по цене. Спасибо!"
                             </p>
                             <p class="testimonial__project">Оптимизированный ремонт, 1-комнатная, м. ВДНХ</p>
                         </div>
@@ -542,7 +1038,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Ремонт кухни и ванной комнаты под ключ. Мастер Олег был всегда доступен, быстро решал вопросы. Результат стоит денег!"
+                                "Ремонт кухни и ванной комнаты под ключ. Мастер был всегда доступен. Результат стоит денег!"
                             </p>
                             <p class="testimonial__project">Ремонт мокрых зон, 2-комнатная, м. Водный стадион</p>
                         </div>
@@ -561,7 +1057,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Переделывали планировку квартиры полностью. Сложная работа, команда справилась идеально. Гарантия 2 года спокойствия!"
+                                "Переделывали планировку квартиры полностью. Сложная работа, команда справилась идеально!"
                             </p>
                             <p class="testimonial__project">Перепланировка + ремонт, 3-комнатная, м. Охотный ряд</p>
                         </div>
@@ -580,7 +1076,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Первый раз делал капремонт. Парни всё объяснили, помогли выбрать материалы, не пришлось жалеть. Очень довольны!"
+                                "Первый раз делал капремонт. Парни всё объяснили, помогли выбрать материалы. Очень довольны!"
                             </p>
                             <p class="testimonial__project">Капитальный ремонт, 2-комнатная, м. Маяковская</p>
                         </div>
@@ -599,7 +1095,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Ремонт в новостройке с нуля. Вложили душу в работу, каждая деталь продумана. Гарантия 2 года — бесценно!"
+                                "Ремонт в новостройке с нуля. Вложили душу в работу, каждая деталь продумана!"
                             </p>
                             <p class="testimonial__project">Ремонт новостройки, 4-комнатная, м. Новослободская</p>
                         </div>
@@ -751,7 +1247,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Ремонт в панельном доме. Звукоизоляция прекрасная, видно работу качественной! Спасибо огромное!"
+                                "Ремонт в панельном доме. Звукоизоляция прекрасная, видно работу качественной! Спасибо!"
                             </p>
                             <p class="testimonial__project">Косметический ремонт, 2-комнатная, м. Борисово</p>
                         </div>
@@ -789,7 +1285,7 @@
                                 <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
                             </div>
                             <p class="testimonial__text">
-                                "Ремонт спальни. Выбор цветов и материалов помог Олег лично. Спасибо за индивидуальный подход!"
+                                "Ремонт спальни. Выбор цветов и материалов помог дизайнер. Спасибо за индивидуальный подход!"
                             </p>
                             <p class="testimonial__project">Дизайн + ремонт спальни, 3-комнатная</p>
                         </div>
@@ -860,51 +1356,110 @@
         </div>
     </section>
 
+    <!-- СЕКЦИЯ КОНТАКТЫ -->
+    <section class="contacts-section" id="contacts">
+        <div class="container">
+            <div class="contacts-header">
+                <h2>Контакты</h2>
+            </div>
+
+            <div class="contacts-content">
+                <div class="contact-item">
+                    <span class="contact-label">Telegram</span>
+                    <a href="https://t.me/mpood01" class="contact-link" target="_blank" rel="noopener">@mpood01</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Телефон</span>
+                    <a href="tel:+79777529050" class="contact-link">+7 977 752 90 50</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Адрес</span>
+                    <span class="contact-value">Пресненская набережная, 8 стр. 1, Москва</span>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <a href="https://t.me/mpood01" class="btn btn--white" target="_blank" rel="noopener">
+                    💬 Обсудить проект в Telegram
+                </a>
+                <a href="https://t.me/mpood01" class="btn btn--white" target="_blank" rel="noopener">
+                    ✉️ Написать в ТГ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Ремонт 24/7. Все права защищены. | <a href="#contacts">Контакты</a></p>
+        </div>
+    </footer>
+
     <!-- Swiper JS (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Инициализация карусели отзывов
+            new Swiper('.testimonials-swiper', {
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 24,
+                pagination: {
+                    el: '.testimonials-swiper .swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.testimonials-swiper .swiper-button-next',
+                    prevEl: '.testimonials-swiper .swiper-button-prev'
+                },
+                breakpoints: {
+                    1024: { slidesPerView: 3 },
+                    768: { slidesPerView: 2 },
+                    480: { slidesPerView: 1 }
+                }
+            });
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.testimonials-swiper', {
-        loop: true,
-        slidesPerView: 3,
-        spaceBetween: 24,
-        pagination: {
-            el: '.testimonials-swiper .swiper-pagination',
-            clickable: true
-        },
-        navigation: {
-            nextEl: '.testimonials-swiper .swiper-button-next',
-            prevEl: '.testimonials-swiper .swiper-button-prev'
-        },
-        breakpoints: {
-            1024: { slidesPerView: 3 },
-            768: { slidesPerView: 2 },
-            480: { slidesPerView: 1 }
-        }
-    });
+            // Инициализация портфолио каруселей
+            const portfolioSliders = document.querySelectorAll('.portfolio .swiper');
+            portfolioSliders.forEach(function (slider) {
+                new Swiper(slider, {
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    pagination: {
+                        el: slider.querySelector('.swiper-pagination'),
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: slider.querySelector('.swiper-button-next'),
+                        prevEl: slider.querySelector('.swiper-button-prev')
+                    }
+                });
+            });
 
-    const portfolioSliders = document.querySelectorAll('.portfolio .swiper');
-    portfolioSliders.forEach(function (slider) {
-        new Swiper(slider, {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 16,
-            pagination: {
-                el: slider.querySelector('.swiper-pagination'),
-                clickable: true
-            },
-            navigation: {
-                nextEl: slider.querySelector('.swiper-button-next'),
-                prevEl: slider.querySelector('.swiper-button-prev')
+            // Мобильное меню
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navbarMenu = document.getElementById('navbarMenu');
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    navbarMenu.style.display = navbarMenu.style.display === 'flex' ? 'none' : 'flex';
+                });
             }
-        });
-    });
-});
-</script>
 
+            // Smooth scroll для якорей
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
